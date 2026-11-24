@@ -1,0 +1,37 @@
+{
+ "name": "linear_head",
+ "method": "linear_head",
+ "encoder": "clip_l14",
+ "seed": 1,
+ "shots": [
+  "Bedroom/image_0069.jpg",
+  "Coast/image_0132.jpg",
+  "Flower/image_0164.jpg",
+  "Forest/image_0313.jpg",
+  "Highway/image_0005.jpg",
+  "Industrial/image_0019.jpg",
+  "InsideCity/image_0242.jpg",
+  "Kitchen/image_0193.jpg",
+  "LivingRoom/image_0043.jpg",
+  "Mountain/image_0048.jpg",
+  "Office/image_0177.jpg",
+  "OpenCountry/image_0074.jpg",
+  "Store/image_0042.jpg",
+  "Street/image_0217.jpg",
+  "Suburb/image_0042.jpg",
+  "TallBuilding/image_0068.jpg"
+ ],
+ "hp": {
+  "lam": 1.0
+ },
+ "flip_tta": false,
+ "val_acc": 0.8833333253860474,
+ "test_acc": 0.9275000095367432,
+ "test_correct": 371,
+ "test_n": 400,
+ "default_hp": {
+  "lam": 10.0
+ },
+ "default_val_acc": 0.875,
+ "default_test_acc": 0.9350000023841858
+}

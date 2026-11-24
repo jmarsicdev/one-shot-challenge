@@ -1,0 +1,45 @@
+{
+ "name": "transductive_sinkhorn",
+ "method": "transductive",
+ "encoder": "clip_l14",
+ "seed": 0,
+ "shots": [
+  "Bedroom/image_0178.jpg",
+  "Coast/image_0203.jpg",
+  "Flower/image_0126.jpg",
+  "Forest/image_0040.jpg",
+  "Highway/image_0046.jpg",
+  "Industrial/image_0006.jpg",
+  "InsideCity/image_0013.jpg",
+  "Kitchen/image_0002.jpg",
+  "LivingRoom/image_0033.jpg",
+  "Mountain/image_0302.jpg",
+  "Office/image_0109.jpg",
+  "OpenCountry/image_0331.jpg",
+  "Store/image_0097.jpg",
+  "Street/image_0103.jpg",
+  "Suburb/image_0235.jpg",
+  "TallBuilding/image_0233.jpg"
+ ],
+ "hp": {
+  "gamma": 1.0,
+  "tau": 200.0,
+  "kappa": 0.0,
+  "balanced": true,
+  "iters": 10
+ },
+ "flip_tta": true,
+ "val_acc": 0.9520833492279053,
+ "test_acc": 0.9624999761581421,
+ "test_correct": 385,
+ "test_n": 400,
+ "default_hp": {
+  "gamma": 4.0,
+  "tau": 50.0,
+  "kappa": 5.0,
+  "balanced": true,
+  "iters": 10
+ },
+ "default_val_acc": 0.8958333134651184,
+ "default_test_acc": 0.9424999952316284
+}

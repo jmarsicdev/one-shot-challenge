@@ -11,8 +11,10 @@ import torch.nn.functional as F
 
 
 def text_proto(ctx):
-    """Prompt ensemble: mean of the template embeddings of each class, renormalised."""
-    return F.normalize(ctx["text"].mean(1), dim=-1)
+    """Prompt ensemble: per prompt set, the renormalised mean embedding of each class; the sets
+    (class-name templates, short descriptions) are then averaged with equal weight."""
+    protos = [F.normalize(t.mean(1), dim=-1) for t in ctx["text"]]
+    return F.normalize(torch.stack(protos).mean(0), dim=-1)
 
 
 def aug_proto(ctx):

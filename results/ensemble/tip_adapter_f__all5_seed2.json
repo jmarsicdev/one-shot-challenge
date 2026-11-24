@@ -1,0 +1,35 @@
+{
+ "name": "tip_adapter_f__all5",
+ "method": "ensemble",
+ "encoder": "ensemble",
+ "seed": 2,
+ "members": [
+  "clip_b16/tip_adapter_f",
+  "clip_l14/tip_adapter_f",
+  "siglip_so400m_224/tip_adapter_f",
+  "siglip_so400m_384/tip_adapter_f",
+  "siglip2_so400m_384/tip_adapter_f"
+ ],
+ "shots": [
+  "Bedroom/image_0174.jpg",
+  "Coast/image_0042.jpg",
+  "Flower/image_0067.jpg",
+  "Forest/image_0043.jpg",
+  "Highway/image_0063.jpg",
+  "Industrial/image_0239.jpg",
+  "InsideCity/image_0080.jpg",
+  "Kitchen/image_0013.jpg",
+  "LivingRoom/image_0056.jpg",
+  "Mountain/image_0184.jpg",
+  "Office/image_0163.jpg",
+  "OpenCountry/image_0235.jpg",
+  "Store/image_0315.jpg",
+  "Street/image_0028.jpg",
+  "Suburb/image_0207.jpg",
+  "TallBuilding/image_0008.jpg"
+ ],
+ "val_acc": 0.9104166666666667,
+ "test_acc": 0.93,
+ "test_correct": 372,
+ "test_n": 400
+}

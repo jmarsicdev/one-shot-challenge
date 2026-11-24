@@ -114,16 +114,15 @@ def _flip_avg(d, flip):
 
 
 def pick_text(ck, prompts):
-    """Prompt embeddings [classes, prompts, dim]: class-name templates, descriptions, or both."""
-    return {"names": ck["text"], "desc": ck["text_desc"],
-            "both": torch.cat([ck["text"], ck["text_desc"]], dim=1)}[prompts]
+    """Prompt sets, each [classes, prompts, dim]: class-name templates, descriptions, or both."""
+    return {"names": [ck["text"]], "desc": [ck["text_desc"]], "both": [ck["text"], ck["text_desc"]]}[prompts]
 
 
 def load_context(encoder, seed, flip=False, prompts="names", shots=None):
     """Everything a method may touch for one (encoder, seed), from the embedding cache.
 
     shot / shot_aug : the 16 labelled images (one per class) and their augmented views
-    text            : [classes, templates, dim] prompt embeddings
+    text            : list of prompt sets, each [classes, templates, dim]
     val, test       : (features, labels) of the 480 validation and 400 test images
     """
     ck = torch.load(FEATS / f"{encoder}.pt", map_location="cpu", weights_only=False)

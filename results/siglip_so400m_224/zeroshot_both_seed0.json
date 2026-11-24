@@ -1,0 +1,33 @@
+{
+ "name": "zeroshot_both",
+ "method": "zeroshot",
+ "encoder": "siglip_so400m_224",
+ "seed": 0,
+ "shots": [
+  "Bedroom/image_0178.jpg",
+  "Coast/image_0203.jpg",
+  "Flower/image_0126.jpg",
+  "Forest/image_0040.jpg",
+  "Highway/image_0046.jpg",
+  "Industrial/image_0006.jpg",
+  "InsideCity/image_0013.jpg",
+  "Kitchen/image_0002.jpg",
+  "LivingRoom/image_0033.jpg",
+  "Mountain/image_0302.jpg",
+  "Office/image_0109.jpg",
+  "OpenCountry/image_0331.jpg",
+  "Store/image_0097.jpg",
+  "Street/image_0103.jpg",
+  "Suburb/image_0235.jpg",
+  "TallBuilding/image_0233.jpg"
+ ],
+ "hp": {},
+ "flip_tta": false,
+ "val_acc": 0.8812500238418579,
+ "test_acc": 0.9024999737739563,
+ "test_correct": 361,
+ "test_n": 400,
+ "default_hp": {},
+ "default_val_acc": 0.8812500238418579,
+ "default_test_acc": 0.9024999737739563
+}

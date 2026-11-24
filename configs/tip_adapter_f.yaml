@@ -1,5 +1,6 @@
 # Tip-Adapter-F: cache keys fine-tuned on augmented views of the 16 shots.
 method: tip_adapter_f
+prompts: both
 epochs: 20
 batch_size: 64
 lr: 0.001

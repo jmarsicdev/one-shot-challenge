@@ -1,0 +1,34 @@
+{
+ "name": "transductive__large4",
+ "method": "ensemble",
+ "encoder": "ensemble",
+ "seed": 1,
+ "members": [
+  "clip_l14/transductive",
+  "siglip_so400m_224/transductive",
+  "siglip_so400m_384/transductive",
+  "siglip2_so400m_384/transductive"
+ ],
+ "shots": [
+  "Bedroom/image_0069.jpg",
+  "Coast/image_0132.jpg",
+  "Flower/image_0164.jpg",
+  "Forest/image_0313.jpg",
+  "Highway/image_0005.jpg",
+  "Industrial/image_0019.jpg",
+  "InsideCity/image_0242.jpg",
+  "Kitchen/image_0193.jpg",
+  "LivingRoom/image_0043.jpg",
+  "Mountain/image_0048.jpg",
+  "Office/image_0177.jpg",
+  "OpenCountry/image_0074.jpg",
+  "Store/image_0042.jpg",
+  "Street/image_0217.jpg",
+  "Suburb/image_0042.jpg",
+  "TallBuilding/image_0068.jpg"
+ ],
+ "val_acc": 0.9416666666666667,
+ "test_acc": 0.95,
+ "test_correct": 380,
+ "test_n": 400
+}

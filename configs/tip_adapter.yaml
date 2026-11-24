@@ -1,5 +1,6 @@
 # Tip-Adapter (training-free). Defaults are the paper's initial alpha / beta.
 method: tip_adapter
+prompts: both
 grid:
   alpha: {geomspace: [0.1, 100.0, 25]}
   beta: {linspace: [0.5, 12.0, 24]}

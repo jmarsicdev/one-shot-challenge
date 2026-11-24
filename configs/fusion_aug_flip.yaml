@@ -1,4 +1,5 @@
 method: fusion
+prompts: both
 augmented: true
 flip_tta: true
 grid:
