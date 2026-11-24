@@ -6,24 +6,30 @@ from PIL import Image
 from torchvision import transforms as T
 from tqdm import tqdm
 
-from common import CLASS_DESC, CLASS_TEXT, CLASSES, DESC_TEMPLATES, ENCODERS, N_AUG, TEMPLATES
+from common import CLASS_DESC, CLASS_TEXT, CLASSES, DESC_TEMPLATES, ENCODERS, GRAY_ENCODERS, N_AUG, TEMPLATES
+
+
+def load_image(file, gray=False):
+    """RGB image; with gray=True colour is removed first (3-channel grayscale)."""
+    img = Image.open(file)
+    return img.convert("L").convert("RGB") if gray else img.convert("RGB")
 
 
 class _Images(torch.utils.data.Dataset):
-    def __init__(self, files, tf):
-        self.files, self.tf = files, tf
+    def __init__(self, files, tf, gray=False):
+        self.files, self.tf, self.gray = files, tf, gray
 
     def __len__(self):
         return len(self.files)
 
     def __getitem__(self, i):
-        return self.tf(Image.open(self.files[i]).convert("RGB"))
+        return self.tf(load_image(self.files[i], self.gray))
 
 
 class Encoder:
     def __init__(self, name, device="cuda"):
-        arch, tag = ENCODERS[name]
-        self.name, self.device = name, device
+        arch, tag = {**ENCODERS, **GRAY_ENCODERS}[name]
+        self.name, self.device, self.gray = name, device, name in GRAY_ENCODERS
         model, _, self.tf = open_clip.create_model_and_transforms(arch, pretrained=tag)
         self.model = model.to(device).eval().requires_grad_(False)
         self.tok = open_clip.get_tokenizer(arch)
@@ -47,7 +53,7 @@ class Encoder:
 
     def images(self, files, desc="", flip=False):
         """Embeddings [n, dim]; with flip=True also the embeddings of the mirrored images."""
-        dl = torch.utils.data.DataLoader(_Images(files, self.tf), batch_size=32, num_workers=8)
+        dl = torch.utils.data.DataLoader(_Images(files, self.tf, self.gray), batch_size=32, num_workers=8)
         out, out_flip = [], []
         for x in tqdm(dl, desc=f"{self.name} {desc}"):
             out.append(self._embed(x))
@@ -57,7 +63,7 @@ class Encoder:
 
     def augmented(self, file, seed=0):
         """N_AUG augmented views of one image -> [N_AUG, dim]. Deterministic given the seed."""
-        img = Image.open(file).convert("RGB")
+        img = load_image(file, self.gray)
         state = torch.random.get_rng_state()
         torch.manual_seed(seed)
         x = torch.stack([self.aug_tf(img) for _ in range(N_AUG)])

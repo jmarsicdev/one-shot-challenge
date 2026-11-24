@@ -1,0 +1,45 @@
+{
+ "name": "transductive",
+ "method": "transductive",
+ "encoder": "clip_l14_gray",
+ "seed": 2,
+ "shots": [
+  "Bedroom/image_0174.jpg",
+  "Coast/image_0042.jpg",
+  "Flower/image_0067.jpg",
+  "Forest/image_0043.jpg",
+  "Highway/image_0063.jpg",
+  "Industrial/image_0239.jpg",
+  "InsideCity/image_0080.jpg",
+  "Kitchen/image_0013.jpg",
+  "LivingRoom/image_0056.jpg",
+  "Mountain/image_0184.jpg",
+  "Office/image_0163.jpg",
+  "OpenCountry/image_0235.jpg",
+  "Store/image_0315.jpg",
+  "Street/image_0028.jpg",
+  "Suburb/image_0207.jpg",
+  "TallBuilding/image_0008.jpg"
+ ],
+ "hp": {
+  "gamma": 1.0,
+  "tau": 50.0,
+  "kappa": 1.0,
+  "balanced": false,
+  "iters": 10
+ },
+ "flip_tta": true,
+ "val_acc": 0.9354166388511658,
+ "test_acc": 0.9574999809265137,
+ "test_correct": 383,
+ "test_n": 400,
+ "default_hp": {
+  "gamma": 4.0,
+  "tau": 50.0,
+  "kappa": 5.0,
+  "balanced": false,
+  "iters": 10
+ },
+ "default_val_acc": 0.8833333253860474,
+ "default_test_acc": 0.9225000143051147
+}

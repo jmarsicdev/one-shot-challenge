@@ -22,7 +22,7 @@ import torch
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
-from common import CLASSES, ENCODERS, ROOT, load_context
+from common import CLASSES, ENCODERS, GRAY_ENCODERS, ROOT, load_context
 from methods import METHODS, accuracy
 
 
@@ -83,14 +83,17 @@ def run(cfg, encoder, seed):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True, nargs="+")
-    ap.add_argument("--encoder", default="clip_l14", choices=list(ENCODERS))
+    ap.add_argument("--encoder", default="clip_l14", choices=[*ENCODERS, *GRAY_ENCODERS])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--all", action="store_true", help="every encoder, seeds 0 1 2")
+    ap.add_argument("--all-gray", action="store_true", help="every grayscale-ablation encoder, seeds 0 1 2")
     args = ap.parse_args()
     for path in args.config:
         cfg = yaml.safe_load(Path(path).read_text())
         cfg.setdefault("name", Path(path).stem)
-        runs = itertools.product(ENCODERS, [0, 1, 2]) if args.all else [(args.encoder, args.seed)]
+        runs = [(args.encoder, args.seed)]
+        if args.all or args.all_gray:
+            runs = itertools.product(GRAY_ENCODERS if args.all_gray else ENCODERS, [0, 1, 2])
         for encoder, seed in runs:
             run(cfg, encoder, seed)
 

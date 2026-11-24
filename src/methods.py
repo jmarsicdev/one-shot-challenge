@@ -135,13 +135,19 @@ def predict_transductive(state, hp, feats):
 
     The whole query batch is used, without labels: prototypes are re-estimated from the queries'
     own soft assignments, with the shot acting as `kappa` pseudo-observations of its class.
+    With no shot (state["img"] is None) the first assignment comes from the text scores alone.
     """
-    text_scores = hp["gamma"] * (feats @ state["txt"].T)
-    proto = state["img"]
+    text_sim = feats @ state["txt"].T
+    text_scores = hp["gamma"] * text_sim
+    shot = state["img"]
+    proto = shot
     for _ in range(hp.get("iters", 10)):
-        scores = feats @ proto.T + text_scores
+        scores = text_sim if proto is None else feats @ proto.T + text_scores
         p = sinkhorn(hp["tau"] * scores) if hp["balanced"] else (hp["tau"] * scores).softmax(1)
-        proto = F.normalize(hp["kappa"] * state["img"] + p.T @ feats, dim=-1)
+        proto = p.T @ feats
+        if shot is not None:
+            proto = proto + hp["kappa"] * shot
+        proto = F.normalize(proto, dim=-1)
     return feats @ proto.T + text_scores
 
 

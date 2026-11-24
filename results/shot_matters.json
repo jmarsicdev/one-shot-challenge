@@ -1,0 +1,1342 @@
+{
+ "clip_b16": {
+  "none/transductive": [
+   {
+    "val": 0.9291666746139526,
+    "test": 0.9175000190734863,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8958333134651184,
+    "default_test": 0.9175000190734863
+   }
+  ],
+  "none/transductive_sinkhorn": [
+   {
+    "val": 0.9375,
+    "test": 0.9449999928474426,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9145833253860474,
+    "default_test": 0.9200000166893005
+   }
+  ],
+  "random/tip_adapter": [
+   {
+    "val": 0.8666666746139526,
+    "test": 0.8650000095367432,
+    "hp": {
+     "alpha": 13.335214,
+     "beta": 10.0
+    },
+    "default_val": 0.8583333492279053,
+    "default_test": 0.875
+   },
+   {
+    "val": 0.8729166388511658,
+    "test": 0.887499988079071,
+    "hp": {
+     "alpha": 4.216965,
+     "beta": 10.5
+    },
+    "default_val": 0.8604166507720947,
+    "default_test": 0.8725000023841858
+   },
+   {
+    "val": 0.8770833611488342,
+    "test": 0.9075000286102295,
+    "hp": {
+     "alpha": 17.782794,
+     "beta": 5.0
+    },
+    "default_val": 0.8604166507720947,
+    "default_test": 0.875
+   }
+  ],
+  "random/transductive": [
+   {
+    "val": 0.9166666865348816,
+    "test": 0.9275000095367432,
+    "hp": {
+     "gamma": 2.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8958333134651184,
+    "default_test": 0.9150000214576721
+   },
+   {
+    "val": 0.9270833134651184,
+    "test": 0.9200000166893005,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.925000011920929
+   },
+   {
+    "val": 0.9333333373069763,
+    "test": 0.9375,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8958333134651184,
+    "default_test": 0.9225000143051147
+   }
+  ],
+  "random/transductive_sinkhorn": [
+   {
+    "val": 0.9375,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9175000190734863
+   },
+   {
+    "val": 0.9437500238418579,
+    "test": 0.9424999952316284,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9083333611488342,
+    "default_test": 0.925000011920929
+   },
+   {
+    "val": 0.9437500238418579,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9145833253860474,
+    "default_test": 0.9150000214576721
+   }
+  ],
+  "typical/tip_adapter": [
+   {
+    "val": 0.9166666865348816,
+    "test": 0.9150000214576721,
+    "hp": {
+     "alpha": 23.713737,
+     "beta": 3.5
+    },
+    "default_val": 0.8604166507720947,
+    "default_test": 0.8725000023841858
+   }
+  ],
+  "typical/transductive": [
+   {
+    "val": 0.9312499761581421,
+    "test": 0.9424999952316284,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 5.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.9225000143051147
+   }
+  ],
+  "typical/transductive_sinkhorn": [
+   {
+    "val": 0.9395833611488342,
+    "test": 0.9449999928474426,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9145833253860474,
+    "default_test": 0.9225000143051147
+   }
+  ],
+  "atypical/tip_adapter": [
+   {
+    "val": 0.8604166507720947,
+    "test": 0.875,
+    "hp": {
+     "alpha": 3.162278,
+     "beta": 2.0
+    },
+    "default_val": 0.856249988079071,
+    "default_test": 0.8725000023841858
+   }
+  ],
+  "atypical/transductive": [
+   {
+    "val": 0.9145833253860474,
+    "test": 0.9300000071525574,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 20.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8979166746139526,
+    "default_test": 0.887499988079071
+   }
+  ],
+  "atypical/transductive_sinkhorn": [
+   {
+    "val": 0.9375,
+    "test": 0.9375,
+    "hp": {
+     "gamma": 2.0,
+     "tau": 100.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9083333611488342,
+    "default_test": 0.9225000143051147
+   }
+  ],
+  "shots": {
+   "typical": [
+    "Bedroom/image_0123.jpg",
+    "Coast/image_0310.jpg",
+    "Flower/image_0081.jpg",
+    "Forest/image_0227.jpg",
+    "Highway/image_0106.jpg",
+    "Industrial/image_0047.jpg",
+    "InsideCity/image_0308.jpg",
+    "Kitchen/image_0199.jpg",
+    "LivingRoom/image_0059.jpg",
+    "Mountain/image_0024.jpg",
+    "Office/image_0032.jpg",
+    "OpenCountry/image_0031.jpg",
+    "Store/image_0163.jpg",
+    "Street/image_0173.jpg",
+    "Suburb/image_0096.jpg",
+    "TallBuilding/image_0030.jpg"
+   ],
+   "atypical": [
+    "Bedroom/image_0178.jpg",
+    "Coast/image_0003.jpg",
+    "Flower/image_0197.jpg",
+    "Forest/image_0132.jpg",
+    "Highway/image_0021.jpg",
+    "Industrial/image_0082.jpg",
+    "InsideCity/image_0262.jpg",
+    "Kitchen/image_0088.jpg",
+    "LivingRoom/image_0265.jpg",
+    "Mountain/image_0226.jpg",
+    "Office/image_0171.jpg",
+    "OpenCountry/image_0282.jpg",
+    "Store/image_0264.jpg",
+    "Street/image_0048.jpg",
+    "Suburb/image_0072.jpg",
+    "TallBuilding/image_0019.jpg"
+   ]
+  }
+ },
+ "clip_l14": {
+  "none/transductive": [
+   {
+    "val": 0.9375,
+    "test": 0.9350000023841858,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.9399999976158142
+   }
+  ],
+  "none/transductive_sinkhorn": [
+   {
+    "val": 0.9520833492279053,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9424999952316284
+   }
+  ],
+  "random/tip_adapter": [
+   {
+    "val": 0.862500011920929,
+    "test": 0.887499988079071,
+    "hp": {
+     "alpha": 0.1,
+     "beta": 0.5
+    },
+    "default_val": 0.8604166507720947,
+    "default_test": 0.887499988079071
+   },
+   {
+    "val": 0.8687499761581421,
+    "test": 0.9200000166893005,
+    "hp": {
+     "alpha": 13.335214,
+     "beta": 11.5
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8949999809265137
+   },
+   {
+    "val": 0.8812500238418579,
+    "test": 0.9175000190734863,
+    "hp": {
+     "alpha": 10.0,
+     "beta": 6.0
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8924999833106995
+   }
+  ],
+  "random/transductive": [
+   {
+    "val": 0.9291666746139526,
+    "test": 0.9549999833106995,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.9300000071525574
+   },
+   {
+    "val": 0.9375,
+    "test": 0.9399999976158142,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.9375
+   },
+   {
+    "val": 0.9208333492279053,
+    "test": 0.9574999809265137,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8729166388511658,
+    "default_test": 0.9200000166893005
+   }
+  ],
+  "random/transductive_sinkhorn": [
+   {
+    "val": 0.9520833492279053,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.9449999928474426
+   },
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9424999952316284
+   },
+   {
+    "val": 0.949999988079071,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9449999928474426
+   }
+  ],
+  "typical/tip_adapter": [
+   {
+    "val": 0.90625,
+    "test": 0.925000011920929,
+    "hp": {
+     "alpha": 74.989421,
+     "beta": 1.5
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8949999809265137
+   }
+  ],
+  "typical/transductive": [
+   {
+    "val": 0.9375,
+    "test": 0.9350000023841858,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 1.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.9350000023841858
+   }
+  ],
+  "typical/transductive_sinkhorn": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9083333611488342,
+    "default_test": 0.9399999976158142
+   }
+  ],
+  "atypical/tip_adapter": [
+   {
+    "val": 0.8645833134651184,
+    "test": 0.887499988079071,
+    "hp": {
+     "alpha": 4.216965,
+     "beta": 2.0
+    },
+    "default_val": 0.862500011920929,
+    "default_test": 0.8849999904632568
+   }
+  ],
+  "atypical/transductive": [
+   {
+    "val": 0.9312499761581421,
+    "test": 0.9574999809265137,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8666666746139526,
+    "default_test": 0.9100000262260437
+   }
+  ],
+  "atypical/transductive_sinkhorn": [
+   {
+    "val": 0.9520833492279053,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8979166746139526,
+    "default_test": 0.9449999928474426
+   }
+  ],
+  "shots": {
+   "typical": [
+    "Bedroom/image_0043.jpg",
+    "Coast/image_0021.jpg",
+    "Flower/image_0115.jpg",
+    "Forest/image_0227.jpg",
+    "Highway/image_0098.jpg",
+    "Industrial/image_0077.jpg",
+    "InsideCity/image_0308.jpg",
+    "Kitchen/image_0131.jpg",
+    "LivingRoom/image_0267.jpg",
+    "Mountain/image_0024.jpg",
+    "Office/image_0076.jpg",
+    "OpenCountry/image_0015.jpg",
+    "Store/image_0012.jpg",
+    "Street/image_0092.jpg",
+    "Suburb/image_0033.jpg",
+    "TallBuilding/image_0037.jpg"
+   ],
+   "atypical": [
+    "Bedroom/image_0146.jpg",
+    "Coast/image_0100.jpg",
+    "Flower/image_0177.jpg",
+    "Forest/image_0132.jpg",
+    "Highway/image_0013.jpg",
+    "Industrial/image_0082.jpg",
+    "InsideCity/image_0015.jpg",
+    "Kitchen/image_0153.jpg",
+    "LivingRoom/image_0265.jpg",
+    "Mountain/image_0218.jpg",
+    "Office/image_0152.jpg",
+    "OpenCountry/image_0022.jpg",
+    "Store/image_0043.jpg",
+    "Street/image_0048.jpg",
+    "Suburb/image_0032.jpg",
+    "TallBuilding/image_0019.jpg"
+   ]
+  }
+ },
+ "siglip_so400m_224": {
+  "none/transductive": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.9449999928474426,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.9325000047683716
+   }
+  ],
+  "none/transductive_sinkhorn": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.9449999928474426,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9104166626930237,
+    "default_test": 0.9275000095367432
+   }
+  ],
+  "random/tip_adapter": [
+   {
+    "val": 0.8979166746139526,
+    "test": 0.9300000071525574,
+    "hp": {
+     "alpha": 56.234133,
+     "beta": 0.5
+    },
+    "default_val": 0.8812500238418579,
+    "default_test": 0.9049999713897705
+   },
+   {
+    "val": 0.9020833373069763,
+    "test": 0.9225000143051147,
+    "hp": {
+     "alpha": 42.16965,
+     "beta": 0.5
+    },
+    "default_val": 0.8812500238418579,
+    "default_test": 0.9049999713897705
+   },
+   {
+    "val": 0.8958333134651184,
+    "test": 0.9075000286102295,
+    "hp": {
+     "alpha": 42.16965,
+     "beta": 4.0
+    },
+    "default_val": 0.8812500238418579,
+    "default_test": 0.9049999713897705
+   }
+  ],
+  "random/transductive": [
+   {
+    "val": 0.9458333253860474,
+    "test": 0.9474999904632568,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9275000095367432
+   },
+   {
+    "val": 0.9458333253860474,
+    "test": 0.9474999904632568,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.90625,
+    "default_test": 0.9325000047683716
+   },
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9474999904632568,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9200000166893005
+   }
+  ],
+  "random/transductive_sinkhorn": [
+   {
+    "val": 0.9520833492279053,
+    "test": 0.9725000262260437,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9300000071525574
+   },
+   {
+    "val": 0.9541666507720947,
+    "test": 0.9649999737739563,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.90625,
+    "default_test": 0.9325000047683716
+   },
+   {
+    "val": 0.9520833492279053,
+    "test": 0.9674999713897705,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.90625,
+    "default_test": 0.9325000047683716
+   }
+  ],
+  "typical/tip_adapter": [
+   {
+    "val": 0.925000011920929,
+    "test": 0.9300000071525574,
+    "hp": {
+     "alpha": 100.0,
+     "beta": 2.0
+    },
+    "default_val": 0.8812500238418579,
+    "default_test": 0.9075000286102295
+   }
+  ],
+  "typical/transductive": [
+   {
+    "val": 0.956250011920929,
+    "test": 0.9574999809265137,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9083333611488342,
+    "default_test": 0.9325000047683716
+   }
+  ],
+  "typical/transductive_sinkhorn": [
+   {
+    "val": 0.9520833492279053,
+    "test": 0.8974999785423279,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9125000238418579,
+    "default_test": 0.9300000071525574
+   }
+  ],
+  "atypical/tip_adapter": [
+   {
+    "val": 0.8812500238418579,
+    "test": 0.9024999737739563,
+    "hp": {
+     "alpha": 0.1,
+     "beta": 0.5
+    },
+    "default_val": 0.8812500238418579,
+    "default_test": 0.9024999737739563
+   }
+  ],
+  "atypical/transductive": [
+   {
+    "val": 0.9458333253860474,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8979166746139526,
+    "default_test": 0.9175000190734863
+   }
+  ],
+  "atypical/transductive_sinkhorn": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.9674999713897705,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9325000047683716
+   }
+  ],
+  "shots": {
+   "typical": [
+    "Bedroom/image_0116.jpg",
+    "Coast/image_0008.jpg",
+    "Flower/image_0093.jpg",
+    "Forest/image_0097.jpg",
+    "Highway/image_0041.jpg",
+    "Industrial/image_0292.jpg",
+    "InsideCity/image_0155.jpg",
+    "Kitchen/image_0081.jpg",
+    "LivingRoom/image_0059.jpg",
+    "Mountain/image_0049.jpg",
+    "Office/image_0080.jpg",
+    "OpenCountry/image_0015.jpg",
+    "Store/image_0314.jpg",
+    "Street/image_0155.jpg",
+    "Suburb/image_0197.jpg",
+    "TallBuilding/image_0044.jpg"
+   ],
+   "atypical": [
+    "Bedroom/image_0146.jpg",
+    "Coast/image_0001.jpg",
+    "Flower/image_0118.jpg",
+    "Forest/image_0009.jpg",
+    "Highway/image_0021.jpg",
+    "Industrial/image_0020.jpg",
+    "InsideCity/image_0183.jpg",
+    "Kitchen/image_0172.jpg",
+    "LivingRoom/image_0026.jpg",
+    "Mountain/image_0061.jpg",
+    "Office/image_0190.jpg",
+    "OpenCountry/image_0052.jpg",
+    "Store/image_0221.jpg",
+    "Street/image_0018.jpg",
+    "Suburb/image_0032.jpg",
+    "TallBuilding/image_0188.jpg"
+   ]
+  }
+ },
+ "siglip_so400m_384": {
+  "none/transductive": [
+   {
+    "val": 0.9458333253860474,
+    "test": 0.8700000047683716,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 100.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8770833611488342,
+    "default_test": 0.8949999809265137
+   }
+  ],
+  "none/transductive_sinkhorn": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.887499988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.8949999809265137
+   }
+  ],
+  "random/tip_adapter": [
+   {
+    "val": 0.8854166865348816,
+    "test": 0.8999999761581421,
+    "hp": {
+     "alpha": 31.622777,
+     "beta": 1.0
+    },
+    "default_val": 0.862500011920929,
+    "default_test": 0.8849999904632568
+   },
+   {
+    "val": 0.893750011920929,
+    "test": 0.9200000166893005,
+    "hp": {
+     "alpha": 74.989421,
+     "beta": 1.0
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8824999928474426
+   },
+   {
+    "val": 0.8958333134651184,
+    "test": 0.8949999809265137,
+    "hp": {
+     "alpha": 31.622777,
+     "beta": 6.5
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8849999904632568
+   }
+  ],
+  "random/transductive": [
+   {
+    "val": 0.9458333253860474,
+    "test": 0.9524999856948853,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8895833492279053,
+    "default_test": 0.9100000262260437
+   },
+   {
+    "val": 0.9458333253860474,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8979166746139526,
+    "default_test": 0.9175000190734863
+   },
+   {
+    "val": 0.9458333253860474,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9075000286102295
+   }
+  ],
+  "random/transductive_sinkhorn": [
+   {
+    "val": 0.9541666507720947,
+    "test": 0.9700000286102295,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8916666507720947,
+    "default_test": 0.9125000238418579
+   },
+   {
+    "val": 0.9541666507720947,
+    "test": 0.9599999785423279,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8895833492279053,
+    "default_test": 0.9075000286102295
+   },
+   {
+    "val": 0.9541666507720947,
+    "test": 0.9674999713897705,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8895833492279053,
+    "default_test": 0.8974999785423279
+   }
+  ],
+  "typical/tip_adapter": [
+   {
+    "val": 0.9270833134651184,
+    "test": 0.9125000238418579,
+    "hp": {
+     "alpha": 56.234133,
+     "beta": 2.5
+    },
+    "default_val": 0.8645833134651184,
+    "default_test": 0.8849999904632568
+   }
+  ],
+  "typical/transductive": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.887499988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9125000238418579
+   }
+  ],
+  "typical/transductive_sinkhorn": [
+   {
+    "val": 0.9541666507720947,
+    "test": 0.9750000238418579,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8979166746139526,
+    "default_test": 0.9024999737739563
+   }
+  ],
+  "atypical/tip_adapter": [
+   {
+    "val": 0.8645833134651184,
+    "test": 0.8824999928474426,
+    "hp": {
+     "alpha": 7.498942,
+     "beta": 3.5
+    },
+    "default_val": 0.8604166507720947,
+    "default_test": 0.8824999928474426
+   }
+  ],
+  "atypical/transductive": [
+   {
+    "val": 0.9208333492279053,
+    "test": 0.8949999809265137,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 20.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8770833611488342,
+    "default_test": 0.9075000286102295
+   }
+  ],
+  "atypical/transductive_sinkhorn": [
+   {
+    "val": 0.9354166388511658,
+    "test": 0.8899999856948853,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.8833333253860474,
+    "default_test": 0.8974999785423279
+   }
+  ],
+  "shots": {
+   "typical": [
+    "Bedroom/image_0183.jpg",
+    "Coast/image_0008.jpg",
+    "Flower/image_0110.jpg",
+    "Forest/image_0227.jpg",
+    "Highway/image_0044.jpg",
+    "Industrial/image_0306.jpg",
+    "InsideCity/image_0155.jpg",
+    "Kitchen/image_0048.jpg",
+    "LivingRoom/image_0255.jpg",
+    "Mountain/image_0067.jpg",
+    "Office/image_0055.jpg",
+    "OpenCountry/image_0015.jpg",
+    "Store/image_0255.jpg",
+    "Street/image_0164.jpg",
+    "Suburb/image_0018.jpg",
+    "TallBuilding/image_0166.jpg"
+   ],
+   "atypical": [
+    "Bedroom/image_0146.jpg",
+    "Coast/image_0001.jpg",
+    "Flower/image_0118.jpg",
+    "Forest/image_0009.jpg",
+    "Highway/image_0021.jpg",
+    "Industrial/image_0033.jpg",
+    "InsideCity/image_0253.jpg",
+    "Kitchen/image_0109.jpg",
+    "LivingRoom/image_0026.jpg",
+    "Mountain/image_0061.jpg",
+    "Office/image_0017.jpg",
+    "OpenCountry/image_0052.jpg",
+    "Store/image_0063.jpg",
+    "Street/image_0048.jpg",
+    "Suburb/image_0032.jpg",
+    "TallBuilding/image_0019.jpg"
+   ]
+  }
+ },
+ "siglip2_so400m_384": {
+  "none/transductive": [
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9524999856948853,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.9225000143051147
+   }
+  ],
+  "none/transductive_sinkhorn": [
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9599999785423279,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9375
+   }
+  ],
+  "random/tip_adapter": [
+   {
+    "val": 0.9041666388511658,
+    "test": 0.9200000166893005,
+    "hp": {
+     "alpha": 17.782794,
+     "beta": 7.5
+    },
+    "default_val": 0.8916666507720947,
+    "default_test": 0.9024999737739563
+   },
+   {
+    "val": 0.9041666388511658,
+    "test": 0.9300000071525574,
+    "hp": {
+     "alpha": 56.234133,
+     "beta": 1.0
+    },
+    "default_val": 0.8854166865348816,
+    "default_test": 0.9024999737739563
+   },
+   {
+    "val": 0.9020833373069763,
+    "test": 0.9200000166893005,
+    "hp": {
+     "alpha": 31.622777,
+     "beta": 5.5
+    },
+    "default_val": 0.8916666507720947,
+    "default_test": 0.9049999713897705
+   }
+  ],
+  "random/transductive": [
+   {
+    "val": 0.9354166388511658,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9125000238418579,
+    "default_test": 0.925000011920929
+   },
+   {
+    "val": 0.9354166388511658,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.8999999761581421,
+    "default_test": 0.9275000095367432
+   },
+   {
+    "val": 0.9354166388511658,
+    "test": 0.949999988079071,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9200000166893005
+   }
+  ],
+  "random/transductive_sinkhorn": [
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9649999737739563,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9399999976158142
+   },
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9674999713897705,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9399999976158142
+   },
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9700000286102295,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 100.0,
+     "kappa": 1.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.90625,
+    "default_test": 0.9350000023841858
+   }
+  ],
+  "typical/tip_adapter": [
+   {
+    "val": 0.9354166388511658,
+    "test": 0.9449999928474426,
+    "hp": {
+     "alpha": 74.989421,
+     "beta": 2.5
+    },
+    "default_val": 0.8916666507720947,
+    "default_test": 0.9049999713897705
+   }
+  ],
+  "typical/transductive": [
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9275000095367432,
+    "hp": {
+     "gamma": 0.0,
+     "tau": 100.0,
+     "kappa": 20.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.9083333611488342,
+    "default_test": 0.9200000166893005
+   }
+  ],
+  "typical/transductive_sinkhorn": [
+   {
+    "val": 0.949999988079071,
+    "test": 0.9674999713897705,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 5.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9041666388511658,
+    "default_test": 0.9375
+   }
+  ],
+  "atypical/tip_adapter": [
+   {
+    "val": 0.887499988079071,
+    "test": 0.9024999737739563,
+    "hp": {
+     "alpha": 0.237137,
+     "beta": 1.5
+    },
+    "default_val": 0.887499988079071,
+    "default_test": 0.8999999761581421
+   }
+  ],
+  "atypical/transductive": [
+   {
+    "val": 0.9354166388511658,
+    "test": 0.9474999904632568,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 50.0,
+     "kappa": 0.0,
+     "balanced": false,
+     "iters": 10
+    },
+    "default_val": 0.90625,
+    "default_test": 0.9024999737739563
+   }
+  ],
+  "atypical/transductive_sinkhorn": [
+   {
+    "val": 0.9479166865348816,
+    "test": 0.9624999761581421,
+    "hp": {
+     "gamma": 1.0,
+     "tau": 200.0,
+     "kappa": 0.0,
+     "balanced": true,
+     "iters": 10
+    },
+    "default_val": 0.9020833373069763,
+    "default_test": 0.9375
+   }
+  ],
+  "shots": {
+   "typical": [
+    "Bedroom/image_0063.jpg",
+    "Coast/image_0043.jpg",
+    "Flower/image_0093.jpg",
+    "Forest/image_0097.jpg",
+    "Highway/image_0098.jpg",
+    "Industrial/image_0047.jpg",
+    "InsideCity/image_0101.jpg",
+    "Kitchen/image_0108.jpg",
+    "LivingRoom/image_0267.jpg",
+    "Mountain/image_0024.jpg",
+    "Office/image_0058.jpg",
+    "OpenCountry/image_0039.jpg",
+    "Store/image_0255.jpg",
+    "Street/image_0164.jpg",
+    "Suburb/image_0130.jpg",
+    "TallBuilding/image_0329.jpg"
+   ],
+   "atypical": [
+    "Bedroom/image_0010.jpg",
+    "Coast/image_0108.jpg",
+    "Flower/image_0118.jpg",
+    "Forest/image_0009.jpg",
+    "Highway/image_0021.jpg",
+    "Industrial/image_0033.jpg",
+    "InsideCity/image_0183.jpg",
+    "Kitchen/image_0191.jpg",
+    "LivingRoom/image_0055.jpg",
+    "Mountain/image_0070.jpg",
+    "Office/image_0084.jpg",
+    "OpenCountry/image_0033.jpg",
+    "Store/image_0276.jpg",
+    "Street/image_0033.jpg",
+    "Suburb/image_0096.jpg",
+    "TallBuilding/image_0188.jpg"
+   ]
+  }
+ }
+}

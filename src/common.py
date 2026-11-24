@@ -74,6 +74,9 @@ ENCODERS = {
     "siglip2_so400m_384": ("ViT-SO400M-16-SigLIP2-384", "webli"),
 }
 
+# Grayscale ablation: "<encoder>_gray" is the same encoder fed 3-channel grayscale images.
+GRAY_ENCODERS = {f"{k}_gray": v for k, v in ENCODERS.items()}
+
 N_AUG = 32  # augmented views cached per shot image
 
 
@@ -138,7 +141,7 @@ def load_context(encoder, seed, flip=False, prompts="names", shots=None):
         "seed": seed,
         "shots": shots,
         "shot": ck["train"]["feats"][si],
-        "shot_aug": torch.stack([ck["shot_aug"][p] for p in shots]) if shots[0] in ck["shot_aug"] else None,
+        "shot_aug": torch.stack([ck["shot_aug"][p] for p in shots]) if all(p in ck["shot_aug"] for p in shots) else None,
         "text": pick_text(ck, prompts),
         "scale": ck["logit_scale"],
         "val": (_flip_avg(ck["train"], flip)[vi], ck["train"]["labels"][vi]),

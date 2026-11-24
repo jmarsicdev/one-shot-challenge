@@ -1,9 +1,9 @@
 {
- "checkpoint": "checkpoints/siglip_so400m_384/transductive_sinkhorn_seed0.pt",
+ "checkpoint": "checkpoints/siglip_so400m_224/transductive_seed0.pt",
  "split": "test",
  "n": 400,
- "correct": 388,
- "acc": 0.97,
+ "correct": 379,
+ "acc": 0.9475,
  "per_class": {
   "Bedroom": 1.0,
   "Coast": 1.0,
@@ -11,22 +11,22 @@
   "Forest": 1.0,
   "Highway": 1.0,
   "Industrial": 1.0,
-  "InsideCity": 0.800000011920929,
+  "InsideCity": 0.6000000238418579,
   "Kitchen": 1.0,
   "LivingRoom": 1.0,
-  "Mountain": 0.9599999785423279,
+  "Mountain": 1.0,
   "Office": 1.0,
-  "OpenCountry": 0.800000011920929,
+  "OpenCountry": 0.6399999856948853,
   "Store": 1.0,
-  "Street": 0.9599999785423279,
+  "Street": 0.9200000166893005,
   "Suburb": 1.0,
   "TallBuilding": 1.0
  },
  "hp": {
   "gamma": 1.0,
-  "tau": 100.0,
-  "kappa": 1.0,
-  "balanced": true,
+  "tau": 50.0,
+  "kappa": 0.0,
+  "balanced": false,
   "iters": 10
  },
  "shots": [

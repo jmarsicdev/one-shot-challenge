@@ -9,12 +9,13 @@ a few hundred kilobytes.
 
 | | test accuracy | notes |
 |---|---|---|
-| **Best single checkpoint** (selected by validation accuracy on seed 0) | **97.00 % (388/400)** | SigLIP SO400M/14 @ 384, transductive prototype refinement with Sinkhorn class balancing. Sibling seeds: 385/400 and 388/400 (mean 96.75 ± 0.43 %). |
-| Best without the class-balance prior | 94.75 % (379/400) | SigLIP SO400M/14 @ 224, transductive refinement. Sibling seeds: 379/400 and 381/400. |
+| **Headline: best single checkpoint without a class-balance assumption** (selected by validation accuracy on seed 0) | **94.75 % (379/400)** | SigLIP SO400M/14 @ 224, transductive prototype refinement. Sibling seeds: 379/400 and 381/400 (mean 94.92 ± 0.29 %). |
+| Ablation: with Sinkhorn class balancing | 97.00 % (388/400) | SigLIP SO400M/14 @ 384, same refinement plus the assumption that the query set is class-balanced. Sibling seeds: 385/400 and 388/400. |
 | Best with no test-time adaptation | 92.25 % (369/400) | SigLIP 2 SO400M/16 @ 384, Tip-Adapter-F. Sibling seeds: 370/400 and 372/400. |
-| Zero-shot reference (no training image at all) | 88.25 % (353/400) | SigLIP SO400M/14 @ 384, prompt ensemble. |
+| Zero-shot reference (no training image at all) | 90.25 % (361/400) | SigLIP SO400M/14 @ 224, prompt ensemble. |
 
-The full ablation (5 encoders × 13 methods × 3 seeds, backbone ensembles, shot sensitivity) is in
+The full ablation (5 encoders × 13 methods × 3 seeds, backbone ensembles, shot sensitivity, a
+grayscale ablation, and a "does the one shot matter?" study) is in
 [`results/RESULTS.md`](results/RESULTS.md).
 
 Things to know when reading these numbers:
@@ -26,7 +27,7 @@ Things to know when reading these numbers:
   hyperparameters (a fusion weight, Tip-Adapter's alpha/beta, the refinement temperature) and the
   prompt set. Because those images are labelled, every result file also carries the accuracy at
   **fixed default hyperparameters, which uses no validation label at all**
-  (`test @ defaults` column). For the headline configuration that number is 91.00 % (364/400).
+  (`test @ defaults` column). For the headline configuration that number is 92.75 % (371/400).
 - **Test-time adaptation.** The transductive rows refine the class prototypes on the *unlabelled*
   test embeddings (the whole 400-image batch at once). Test labels are never used. The Sinkhorn
   variant additionally assumes the query set is class-balanced, as the training set is.
@@ -39,7 +40,7 @@ Things to know when reading these numbers:
 All methods work on cached, L2-normalised embeddings from a frozen encoder.
 
 1. **Zero-shot** – cosine similarity to a prompt ensemble: 7 class-name templates (including
-   "a black and white photo of a {}", the images are grayscale) and 2 templates over a short
+   "a black and white photo of a {}"; 15 of the 16 classes are grayscale files, only Flower is in colour) and 2 templates over a short
    description of each class; the two sets are averaged with equal weight.
 2. **One-shot image prototype** – cosine similarity to the single shot's embedding.
 3. **Text + image fusion** – weighted sum of the two similarities.
@@ -63,7 +64,7 @@ train.py              fit one method (config) for one encoder and seed, tune on 
 evaluate.py           evaluate a saved checkpoint (optionally re-embedding the raw images)
 configs/              one YAML per method (hyperparameter grid and fixed defaults)
 src/                  common.py (classes, prompts, encoders), encode.py, methods.py
-scripts/              make_shots.py, ensemble.py, shot_sensitivity.py, make_table.py
+scripts/              make_shots.py, ensemble.py, shot_sensitivity.py, shot_matters.py, make_table.py
 splits/               val_split.json (fixed 1,920 / 480 split), shots.json (the shots per seed)
 checkpoints/          trained classifiers: checkpoints/<encoder>/<method>_seed<k>.pt
 results/              per-run JSON, RESULTS.md, final/test_metrics.json
@@ -87,7 +88,13 @@ ln -s /path/to/dataset data        # must contain data/train/<Class>/*.jpg and d
 ```
 
 **Headline number from the shipped checkpoint** (downloads the SigLIP weights, embeds the 400 test
-images, prints `acc 97.00% (388/400)`):
+images, prints `acc 94.75% (379/400)`; per-class numbers are in `results/final/test_metrics.json`):
+
+```bash
+uv run python evaluate.py --checkpoint checkpoints/siglip_so400m_224/transductive_seed0.pt --from-images
+```
+
+The Sinkhorn ablation (prints `acc 97.00% (388/400)`):
 
 ```bash
 uv run python evaluate.py --checkpoint checkpoints/siglip_so400m_384/transductive_sinkhorn_seed0.pt --from-images
@@ -102,6 +109,10 @@ uv run python train.py --config configs/*.yaml --all   # all methods, encoders, 
 uv run python scripts/ensemble.py --name transductive --seed 0 \
     --encoders clip_b16 clip_l14 siglip_so400m_224 siglip_so400m_384 siglip2_so400m_384 --tag transductive__all5
 uv run python scripts/shot_sensitivity.py
+uv run python scripts/shot_matters.py                  # no shot vs random vs typical/atypical shot
+uv run python extract.py clip_l14_gray                 # grayscale ablation: any encoder name + _gray
+uv run python train.py --config configs/zeroshot_both.yaml configs/tip_adapter_f.yaml \
+    configs/transductive.yaml configs/transductive_sinkhorn.yaml --all-gray
 uv run python scripts/make_table.py                    # results/RESULTS.md
 ```
 

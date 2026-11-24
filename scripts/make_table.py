@@ -11,7 +11,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
-from common import ENCODERS
+from common import ENCODERS, GRAY_ENCODERS
 
 ORDER = ["zeroshot", "zeroshot_desc", "zeroshot_both", "proto", "proto_aug", "fusion", "fusion_aug",
          "fusion_aug_flip", "tip_adapter", "tip_adapter_f", "linear_head", "transductive",
@@ -57,5 +57,46 @@ if sens.exists():
             t = np.array(a["test"]) * 100
             lines.append(f"| {enc} | {label} | {ms(a['val'])} | {ms(a['test'])} | {t.min():.2f} to {t.max():.2f} |")
     lines.append("")
+GRAY_ROWS = ["zeroshot_both", "tip_adapter_f", "transductive", "transductive_sinkhorn"]
+if any(e in GRAY_ENCODERS for e, _ in runs):
+    lines += ["## Grayscale ablation", "",
+              "Only the Flower class is stored in colour (all 175 Flower images, train and test); the other 15 "
+              "classes are grayscale files. Here every image is converted to 3-channel grayscale before the "
+              "encoder, so colour cannot act as a shortcut for Flower. Same shots, grids and selection rule; "
+              "mean ± std over seeds 0, 1, 2.", "",
+              "| encoder | method | val, original | val, grayscale | test, original | test, grayscale |",
+              "|---|---|---|---|---|---|"]
+    for enc in ENCODERS:
+        for n in GRAY_ROWS:
+            a, b = runs.get((enc, n)), runs.get((f"{enc}_gray", n))
+            if a and b:
+                lines.append(f"| {enc} | {n} | {ms([r['val_acc'] for r in a])} | {ms([r['val_acc'] for r in b])} | "
+                             f"{ms([r['test_acc'] for r in a])} | {ms([r['test_acc'] for r in b])} |")
+    lines += ["", "Reading: removing colour changes the Flower embeddings (cosine to the colour version about "
+              "0.87 to 0.90) but not the predictions; accuracy is unchanged to within one image. Colour is "
+              "not what makes Flower easy, and the other 15 classes never had colour.", ""]
+sm = ROOT / "results/shot_matters.json"
+if sm.exists():
+    lines += ["## Does the one shot matter?", "",
+              "`none` = no training image (prompts only); `random` = the three seeded shots (mean ± std); "
+              "`typical` / `atypical` = ORACLE choices, the training image closest to / farthest from its class "
+              "mean embedding. The oracle rows need all training labels and are analysis only, never a "
+              "reported one-shot result. Raw shot embedding (no augmented views), so `random` differs slightly "
+              "from the main tables. Hyperparameters tuned on val as everywhere else; `test @ defaults` uses "
+              "no validation label. See `scripts/shot_matters.py`.", "",
+              "| encoder | shot | method | val (tuned) | test (tuned) | test @ defaults |", "|---|---|---|---|---|---|"]
+    for enc, rows in json.loads(sm.read_text()).items():
+        for key, rs in rows.items():
+            if key == "shots":
+                continue
+            v, m = key.split("/")
+            lines.append(f"| {enc} | {v} | {m} | {ms([r['val'] for r in rs])} | {ms([r['test'] for r in rs])} | "
+                         f"{ms([r['default_test'] for r in rs])} |")
+    lines += ["", "Reading: for the inductive Tip-Adapter the shot matters (typical shots beat random ones, "
+              "atypical ones are worse). For transductive refinement, validation accuracy is about the same "
+              "with no shot at all as with a random shot: the unlabelled queries and the prompts do the work. "
+              "The single-run test numbers without a shot or with an oracle shot are less stable: in a few "
+              "cases the setting chosen on validation merges two similar classes on the 400-image test batch "
+              "and test accuracy drops to 87 to 90 %, which the three random-shot seeds never did.", ""]
 (ROOT / "results/RESULTS.md").write_text("\n".join(lines))
 print("\n".join(lines))
