@@ -1,0 +1,8 @@
+# Linear head initialised at the prompt weights, trained on the shots + augmented views.
+method: linear_head
+lr: 0.001
+steps: 100
+lams: [0.1, 1.0, 10.0, 100.0, 1000.0]
+grid:
+  lam: [0.1, 1.0, 10.0, 100.0, 1000.0]
+default: {lam: 10.0}

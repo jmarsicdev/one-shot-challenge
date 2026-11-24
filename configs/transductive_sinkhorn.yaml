@@ -1,0 +1,9 @@
+# Ablation: as transductive.yaml, with Sinkhorn class balancing of the soft assignments
+# (assumes the query set has equal class frequencies).
+method: transductive
+flip_tta: true
+grid:
+  gamma: [0.0, 1.0, 2.0, 4.0, 8.0, 16.0]
+  tau: [20.0, 50.0, 100.0, 200.0]
+  kappa: [0.0, 1.0, 5.0, 20.0]
+default: {gamma: 4.0, tau: 50.0, kappa: 5.0, balanced: true, iters: 10}

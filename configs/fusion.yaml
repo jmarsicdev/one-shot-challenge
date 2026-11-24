@@ -1,0 +1,4 @@
+method: fusion
+grid:
+  alpha: {linspace: [0.0, 1.0, 41]}
+default: {alpha: 0.5}

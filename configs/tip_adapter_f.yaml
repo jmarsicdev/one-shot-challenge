@@ -1,0 +1,9 @@
+# Tip-Adapter-F: cache keys fine-tuned on augmented views of the 16 shots.
+method: tip_adapter_f
+epochs: 20
+batch_size: 64
+lr: 0.001
+grid:
+  alpha: {geomspace: [0.1, 100.0, 25]}
+  beta: {linspace: [0.5, 12.0, 24]}
+default: {alpha: 1.0, beta: 5.5}

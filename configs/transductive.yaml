@@ -1,0 +1,9 @@
+# Transductive prototype refinement on the unlabelled query set (test-time adaptation):
+# flip TTA + soft k-means anchored to the text scores and the shot prototype.
+method: transductive
+flip_tta: true
+grid:
+  gamma: [0.0, 1.0, 2.0, 4.0, 8.0, 16.0]
+  tau: [20.0, 50.0, 100.0, 200.0]
+  kappa: [0.0, 1.0, 5.0, 20.0]
+default: {gamma: 4.0, tau: 50.0, kappa: 5.0, balanced: false, iters: 10}
